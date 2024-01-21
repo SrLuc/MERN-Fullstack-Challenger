@@ -1,5 +1,6 @@
 const DUMMY_DELIVERIES = require("../models/data-deliveries-model");
 const HttpError = require("../models/error-model");
+const getCoordinatesByAddress = require("../util/google-address");
 
 const DeliveriesTest = (req, res, next) => {
   res.json("Hello Wolrd");
@@ -22,13 +23,24 @@ const getDeliveriesById = (req, res, next) => {
   res.json({ delivery });
 };
 
-const createDelivery = (req, res, next) => {
+const createDelivery = async (req, res, next) => {
+  
   const { name, kg, address } = req.body;
+
+  let addressComponents;
+  try {
+    addressComponents = await getCoordinatesByAddress(address);
+  } catch (error) {
+    return next(error);
+  }
+
   const createdDelivery = {
+    id: Math.random().toString(),
     name,
     kg,
-    address,
+    address: addressComponents,
   };
+
   DUMMY_DELIVERIES.push(createdDelivery);
   res.status(201).json({ delivery: createdDelivery });
 };
