@@ -18,24 +18,22 @@ const getCoordinatesByAddress = async (address) => {
     );
     throw error;
   }
-  extractAddressComponents(data);
-  const addressObject = extractAddressComponents(data);
-
-  console.log(addressObject);
+  const addressExtracted = extractAddressComponents(data);
+  console.log(addressExtracted);
 };
 
 getCoordinatesByAddress("Rua José Inácio do Carmo");
 getCoordinatesByAddress("Rua Cláudio Brotherhood");
 getCoordinatesByAddress("Rua da Aurora");
-getCoordinatesByAddress("Rua do Bom Jesus")
-getCoordinatesByAddress("Rua Gastão Vidigal");
-getCoordinatesByAddress("Rua Vicente Zírpoli")
-getCoordinatesByAddress("Rua do Sol");
-getCoordinatesByAddress("Rua Repartimento");
-getCoordinatesByAddress("Rua tatuamunha");
-getCoordinatesByAddress("Rua Álvares Pires");
-getCoordinatesByAddress("Rua Padre Julio Maria");
-getCoordinatesByAddress("Rua Plutão, Rio de Janeiro");
+//getCoordinatesByAddress("Rua do Bom Jesus")
+//getCoordinatesByAddress("Rua Gastão Vidigal");
+//getCoordinatesByAddress("Rua Vicente Zírpoli")
+//getCoordinatesByAddress("Rua do Sol");
+//getCoordinatesByAddress("Rua Repartimento");
+//getCoordinatesByAddress("Rua tatuamunha");
+//getCoordinatesByAddress("Rua Álvares Pires");
+//getCoordinatesByAddress("Rua Padre Julio Maria");
+//getCoordinatesByAddress("Rua Plutão, Rio de Janeiro");
 //getCoordinatesByAddress("Rua osaka");
 //getCoordinatesByAddress("13 Rue du Souvenir");
 //getCoordinatesByAddress("Neuschönefeld");

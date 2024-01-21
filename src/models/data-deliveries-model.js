@@ -5,9 +5,6 @@ const DUMMY_DELIVERIES = [
     kg: 12,
     address: {
       publicPlace: "Jalan Utama",
-      number: 456,
-      neighborhood: "Kelurahan Baru",
-      complement: "Bloco B, Apartemen 102",
       city: "Jakarta",
       state: "Java",
       country: "Indonesia",
@@ -23,9 +20,6 @@ const DUMMY_DELIVERIES = [
     kg: 18,
     address: {
       publicPlace: "Main Street",
-      number: 789,
-      neighborhood: "Central District",
-      complement: "Tower C, Apartment 1502",
       city: "Beijing",
       state: "Beijing",
       country: "China",
@@ -41,9 +35,6 @@ const DUMMY_DELIVERIES = [
     kg: 14,
     address: {
       publicPlace: "George Street",
-      number: 567,
-      neighborhood: "CBD",
-      complement: "Suite 802, Tower A",
       city: "Sydney",
       state: "New South Wales",
       country: "Australia",
