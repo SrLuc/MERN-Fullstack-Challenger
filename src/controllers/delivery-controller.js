@@ -1,6 +1,8 @@
 const DUMMY_DELIVERIES = require("../models/data-deliveries-model");
 const HttpError = require("../models/error-model");
 const getCoordinatesByAddress = require("../util/google-address");
+const { validationResult } = require("express-validator");
+
 
 const DeliveriesTest = (req, res, next) => {
   res.json("Hello Wolrd");
@@ -24,6 +26,14 @@ const getDeliveriesById = (req, res, next) => {
 };
 
 const createDelivery = async (req, res, next) => {
+  const validationErrors = validationResult(req);
+
+  if (!validationErrors.isEmpty()) {
+    return next(
+      new HttpError("Invalid inputs passed, please check your data.", 422)
+    );
+  }
+
   const { name, kg, address } = req.body;
 
   let addressComponents;

@@ -16,14 +16,14 @@ const extractAddressComponents = (data) => {
   const position = [lat, lng];
 
   return {
-    //publicPlace,
-    // city,
+    publicPlace,
+    city,
     //zipCode,
-    //state,
-    //country,
-    geoLocation,
-    formattedAddress,
-    position, // Adicionando o array 'position' aos resultados
+    state,
+    country,
+    //geoLocation,
+    //formattedAddress,
+    position,
   };
 };
 

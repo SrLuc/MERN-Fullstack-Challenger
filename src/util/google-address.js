@@ -23,6 +23,6 @@ const getCoordinatesByAddress = async (address) => {
   return addressExtracted;
 };
 
-getCoordinatesByAddress("Rua Claudio Brotherhood")
+//getCoordinatesByAddress("Rua Claudio Brotherhood")
 
 module.exports = getCoordinatesByAddress;

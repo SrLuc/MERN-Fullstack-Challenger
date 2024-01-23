@@ -8,10 +8,7 @@ const DUMMY_DELIVERIES = [
       city: "Jakarta",
       state: "Java",
       country: "Indonesia",
-      geoLocation: {
-        lat: -6.2088,
-        lng: 106.8456,
-      },
+      location: [-6.2088, 106.8456],
     },
   },
   {
@@ -23,10 +20,7 @@ const DUMMY_DELIVERIES = [
       city: "Beijing",
       state: "Beijing",
       country: "China",
-      geoLocation: {
-        lat: 39.9042,
-        lng: 116.4074,
-      },
+      location: [39.9042, 116.4074],
     },
   },
   {
@@ -38,10 +32,7 @@ const DUMMY_DELIVERIES = [
       city: "Sydney",
       state: "New South Wales",
       country: "Australia",
-      geoLocation: {
-        lat: -33.8688,
-        lng: 151.2093,
-      },
+      location: [-33.8688, 151.2093],
     },
   },
 ];
