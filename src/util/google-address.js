@@ -19,9 +19,10 @@ const getCoordinatesByAddress = async (address) => {
     throw error;
   }
   const addressExtracted = extractAddressComponents(data);
-
+  console.log(addressExtracted);
   return addressExtracted;
 };
 
+getCoordinatesByAddress("Rua Claudio Brotherhood")
 
 module.exports = getCoordinatesByAddress;

@@ -12,15 +12,18 @@ const extractAddressComponents = (data) => {
   const country = addressComponents[countryIndex]?.trim() || "";
 
   const geoLocation = data.results[0]?.geometry?.location || {};
+  const { lat, lng } = geoLocation;
+  const position = [lat, lng];
 
   return {
     //publicPlace,
-    //city,
+    // city,
     //zipCode,
     //state,
     //country,
-    //geoLocation,
+    geoLocation,
     formattedAddress,
+    position, // Adicionando o array 'position' aos resultados
   };
 };
 
