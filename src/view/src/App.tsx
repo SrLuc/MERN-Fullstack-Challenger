@@ -1,8 +1,13 @@
+import DeliveryForm from "./components/DeliveryForm";
+import DeliveryMap from "./components/Map";
+import "./css/App.css";
+
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <main className="flex h-screen">
+      <DeliveryForm />
+      <DeliveryMap />
+    </main>
   );
 }
 

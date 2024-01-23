@@ -13,7 +13,7 @@ const extractAddressComponents = (data) => {
 
   const geoLocation = data.results[0]?.geometry?.location || {};
   const { lat, lng } = geoLocation;
-  const position = [lat, lng];
+  const location = [lat, lng];
 
   return {
     publicPlace,
@@ -23,7 +23,7 @@ const extractAddressComponents = (data) => {
     country,
     //geoLocation,
     //formattedAddress,
-    position,
+    location,
   };
 };
 
