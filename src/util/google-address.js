@@ -20,14 +20,8 @@ const getCoordinatesByAddress = async (address) => {
   }
   const addressExtracted = extractAddressComponents(data);
 
-  console.log(addressExtracted);
-
   return addressExtracted;
 };
 
-getCoordinatesByAddress("Rua dos Bobos, 0, São Paulo - SP, Brasil");
-getCoordinatesByAddress("R. Gilvan Araújo da Silva");
-getCoordinatesByAddress("Rua Frei Caneca, 201, São Lourenço, PE, Brasil")
-getCoordinatesByAddress("Rua Rio Jiquiá")
 
 module.exports = getCoordinatesByAddress;

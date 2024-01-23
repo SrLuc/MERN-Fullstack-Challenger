@@ -24,14 +24,15 @@ const getDeliveriesById = (req, res, next) => {
 };
 
 const createDelivery = async (req, res, next) => {
-  
   const { name, kg, address } = req.body;
 
   let addressComponents;
   try {
     addressComponents = await getCoordinatesByAddress(address);
   } catch (error) {
-    return next(error);
+    return res
+      .status(422)
+      .json({ error: "Could not find location for the specified address." });
   }
 
   const createdDelivery = {
