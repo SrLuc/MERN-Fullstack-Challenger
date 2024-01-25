@@ -4,7 +4,7 @@ interface DeliveryFormProps {}
 
 const DeliveryForm = ({}: DeliveryFormProps) => {
   return (
-    <section className="p-5 w-1/4">
+    <section className="p-5 xl:w-1/4 lg:w-1/4 md:w-1/4 sm:w-full">
       <form action="POST" className="flex flex-col ">
         <input
           type="text"
@@ -25,7 +25,7 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
           className="text-center"
         />
         <button type="submit">Buscar</button>
-        <div className="flex">
+        <div className="flex justify-center">
           <input
             type="text"
             placeholder="latitude"
