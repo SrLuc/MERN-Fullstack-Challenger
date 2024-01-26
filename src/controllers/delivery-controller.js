@@ -3,7 +3,6 @@ const HttpError = require("../models/error-model");
 const getCoordinatesByAddress = require("../util/google-address");
 const { validationResult } = require("express-validator");
 
-
 const DeliveriesTest = (req, res, next) => {
   res.json("Hello Wolrd");
 };
@@ -52,8 +51,12 @@ const createDelivery = async (req, res, next) => {
     address: addressComponents,
   };
 
-  DUMMY_DELIVERIES.push(createdDelivery);
-  res.status(201).json({ delivery: createdDelivery });
+  if (name === DUMMY_DELIVERIES.map((d) => d.name)) {
+    return res.status(422).json({ error: "Name already exists." });
+  } else {
+    DUMMY_DELIVERIES.push(createdDelivery);
+    res.status(201).json({ delivery: createdDelivery });
+  }
 };
 
 const deleteAllDeliveries = (req, res, next) => {

@@ -26,7 +26,7 @@ const DeliveryTable = ({}: DeliveryTableProps) => {
           <th>Rua</th>
           <th>Cidade</th>
           <th>País</th>
-          <th>Peso</th>
+          <th>Peso(kg)</th>
           <th>Lat</th>
           <th>Lng</th>
         </tr>
