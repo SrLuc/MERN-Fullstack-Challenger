@@ -2,30 +2,92 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
+
 
 .leaflet-container {
   width: 100%;
   height: 75vh;
 
   @media (max-width: 768px) {
-    height: 50vh;
+    height: 60vh;
   }
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  
+  overflow-x: auto;
 }
 
 th,
 td {
   border: 1px solid #dddddd;
   text-align: left;
-  padding: 8px;
+  padding: 4px;
+  white-space: nowrap;
 }
 
 th {
   background-color: #f2f2f2;
+}
+
+/*Nome, KG, Endereço*/
+.userInputs {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  outline: none;
+}
+
+/*Busca*/
+.searchButton {
+  color: rgb(34, 31, 31);
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  transition: all 0.3s ease-in-out;
+}
+/*Busca*/
+.searchButton svg {
+  display: inline;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.75rem;
+  color: rgb(12, 11, 11);
+}
+/*Busca*/
+.searchButton:focus svg {
+  animation: spin_357 0.5s linear;
+}
+/*Busca*/
+@keyframes spin_357 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Latitude / Longitude*/
+.latLong {
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  outline: none;
+}
+
+/*Botão de adicionar*/
+.styledButton {
+  color: rgb(34, 31, 31);
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }

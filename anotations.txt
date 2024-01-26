@@ -10,8 +10,11 @@ Receber os dados da Api na tabela OK
 
 25/01
 trazer os dados do usuario para a api OK
-estilizar o formulário
-estilizar a seção do mapa com a tabela
+estilizar o formulário OK
+estilizar a seção do mapa com a tabela OK
+
+26/01
+Responsividade do formulário com o mapa e com a tabela para diferentes dispositivos
 
 
  
