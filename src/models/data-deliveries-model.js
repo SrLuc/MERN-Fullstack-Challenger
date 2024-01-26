@@ -1,7 +1,7 @@
 const DUMMY_DELIVERIES = [
   {
     id: "1",
-    name: "Delivery In Jakarta",
+    name: "Andri",
     kg: 12,
     address: {
       publicPlace: "Jalan Utama",
@@ -13,7 +13,7 @@ const DUMMY_DELIVERIES = [
   },
   {
     id: "2",
-    name: "Delivery in Beijing",
+    name: "Quon",
     kg: 18,
     address: {
       publicPlace: "Main Street",
@@ -25,7 +25,7 @@ const DUMMY_DELIVERIES = [
   },
   {
     id: "3",
-    name: "Delivery in Sydney",
+    name: "Tristán",
     kg: 14,
     address: {
       publicPlace: "George Street",

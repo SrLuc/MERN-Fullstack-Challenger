@@ -45,10 +45,10 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
   };
 
   return (
-    <section className="p-5 xl:w-1/4 lg:w-1/4 md:w-1/4 sm:w-full">
+    <section className="xl:w-1/4 lg:w-1/2 md:w-1/2 sm:w-full ">
       <form
         action="POST"
-        className="flex flex-col h-1/2 justify-evenly "
+        className="flex flex-col h-1/2 justify-evenly formContainer m-5"
         onSubmit={() => {
           handleDeliverySubmit();
         }}
@@ -107,12 +107,14 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
             id="lng"
           />
         </div>
-        <button className="styledButton" type="submit">
-          Cadastrar Cliente
-        </button>
-        <button className="styledButton" type="submit">
-          Resetar Cadastro
-        </button>
+        <div className="flex flex-col ">
+          <button className="styledButton" type="submit">
+            Cadastrar Cliente
+          </button>
+          <button className="styledButton" type="submit">
+            Resetar Cadastro
+          </button>
+        </div>
       </form>
     </section>
   );

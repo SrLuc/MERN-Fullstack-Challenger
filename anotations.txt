@@ -14,7 +14,9 @@ estilizar o formulário OK
 estilizar a seção do mapa com a tabela OK
 
 26/01
-Responsividade do formulário com o mapa e com a tabela para diferentes dispositivos
-
+Responsividade do formulário com o mapa e com a tabela para diferentes dispositivos OK
+Fazer função para deletar todos os deliveries
+trocar o tipo de ação do botãoo de deletar
+trocar os valores sensiveis por pela lib DOTENV
 
  
