@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import axios from "axios";
 
 interface DeliveryMapProps {
   children?: React.ReactNode;
 }
 
-const DeliveryMap = ({ children }: DeliveryMapProps) => {
+const DeliveryMap = ({}: DeliveryMapProps) => {
   const [deliveryMap, setDeliveryMap] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:7936/deliveries")
+      .get("https://merndeliveryapi.onrender.com/deliveries")
       .then((response) => {
         setDeliveryMap(response.data);
         console.log(response.data);

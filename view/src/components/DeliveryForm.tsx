@@ -18,7 +18,7 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
     if (name.value === "" || kg.value === "" || address.value === "") {
       return alert("Preencha todos os campos");
     } else {
-      axios.post("http://localhost:7936/deliveries", body);
+      axios.post("https://merndeliveryapi.onrender.com/deliveries", body);
       alert("Cadastro realizado com sucesso");
     }
   };
