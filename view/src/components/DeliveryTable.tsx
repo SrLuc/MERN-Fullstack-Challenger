@@ -8,7 +8,7 @@ const DeliveryTable = ({}: DeliveryTableProps) => {
 
   useEffect(() => {
     axios
-      .get("https://merndeliveryapi.onrender.com/deliveries")
+      .get("http://localhost:7936/deliveries")
       .then((response) => {
         setDeliveryDataTable(response.data);
         console.log(response.data);

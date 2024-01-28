@@ -11,7 +11,7 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
 
   useEffect(() => {
     axios
-      .get("https://merndeliveryapi.onrender.com/deliveries")
+      .get("http://localhost:7936/deliveries")
       .then((response) => {
         setDeliveryMap(response.data);
         console.log(response.data);

@@ -18,7 +18,7 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
     if (name.value === "" || kg.value === "" || address.value === "") {
       return alert("Preencha todos os campos");
     } else {
-      axios.post("https://merndeliveryapi.onrender.com/deliveries", body);
+      axios.post("http://localhost:7936/deliveries", body);
       alert("Cadastro realizado com sucesso");
     }
   };
@@ -31,7 +31,9 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
 
     const addressValue = address.value;
 
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressValue}&key=${API_KEY}`;
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(
+      addressValue
+    )}&key=${encodeURIComponent(API_KEY)}`;
 
     axios
       .get(url)
@@ -42,6 +44,12 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  const deleteAllDeliveries = () => {
+    axios.delete("http://localhost:7936/deliveries");
+    alert("Todos os cadastros foram deletados");
+    window.location.reload();
   };
 
   return (
@@ -111,7 +119,11 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
           <button className="styledButton" type="submit">
             Cadastrar Cliente
           </button>
-          <button className="styledButton" type="submit">
+          <button
+            className="styledButton"
+            type="button"
+            onClick={deleteAllDeliveries}
+          >
             Resetar Cadastro
           </button>
         </div>
