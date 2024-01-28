@@ -1,6 +1,6 @@
 import axios from "axios";
 import "../css/UIElements.css";
-
+import encrypted from "../../encrypted";
 interface DeliveryFormProps {}
 
 const DeliveryForm = ({}: DeliveryFormProps) => {
@@ -23,7 +23,9 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
     }
   };
 
-  const API_KEY = "AIzaSyB7Q6umkMcCwXwVb2wl5B4Htdy84fw89F0";
+  //const API_KEY = "AIzaSyB7Q6umkMcCwXwVb2wl5B4Htdy84fw89F0";
+  //const API_KEY = process.env.REACT_APP_GEOLOCATION_GOOGLE_API_KEY;
+
   const getGeolocation = () => {
     const lat = document.getElementById("lat") as HTMLInputElement;
     const lng = document.getElementById("lng") as HTMLInputElement;
@@ -33,7 +35,7 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
 
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(
       addressValue
-    )}&key=${encodeURIComponent(API_KEY)}`;
+    )}&key=${encrypted.REACT_GEOLOCATION_GOOGLE_API_KEY}`;
 
     axios
       .get(url)
