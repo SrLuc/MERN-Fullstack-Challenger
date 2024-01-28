@@ -10,5 +10,4 @@ app.use(cors());
 app.use(devliveriesRoutes);
 
 
-
 module.exports = app;
