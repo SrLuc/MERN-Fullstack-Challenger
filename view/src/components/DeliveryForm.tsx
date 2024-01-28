@@ -18,13 +18,10 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
     if (name.value === "" || kg.value === "" || address.value === "") {
       return alert("Preencha todos os campos");
     } else {
-      axios.post("http://localhost:7936/deliveries", body);
+      axios.post(encrypted.ALL_DELIVERIES, body);
       alert("Cadastro realizado com sucesso");
     }
   };
-
-  //const API_KEY = "AIzaSyB7Q6umkMcCwXwVb2wl5B4Htdy84fw89F0";
-  //const API_KEY = process.env.REACT_APP_GEOLOCATION_GOOGLE_API_KEY;
 
   const getGeolocation = () => {
     const lat = document.getElementById("lat") as HTMLInputElement;
@@ -49,7 +46,7 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
   };
 
   const deleteAllDeliveries = () => {
-    axios.delete("http://localhost:7936/deliveries");
+    axios.delete(encrypted.ALL_DELIVERIES);
     alert("Todos os cadastros foram deletados");
     window.location.reload();
   };

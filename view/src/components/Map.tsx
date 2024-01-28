@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import axios from "axios";
+import encrypted from "../../encrypted";
 
 interface DeliveryMapProps {
   children?: React.ReactNode;
@@ -11,7 +12,7 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:7936/deliveries")
+      .get(encrypted.ALL_DELIVERIES)
       .then((response) => {
         setDeliveryMap(response.data);
         console.log(response.data);

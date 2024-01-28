@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import encrypted from "../../encrypted";
 
 interface DeliveryTableProps {}
 
@@ -8,7 +9,7 @@ const DeliveryTable = ({}: DeliveryTableProps) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:7936/deliveries")
+      .get(encrypted.ALL_DELIVERIES)
       .then((response) => {
         setDeliveryDataTable(response.data);
         console.log(response.data);
