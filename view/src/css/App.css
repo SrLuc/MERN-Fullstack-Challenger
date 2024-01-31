@@ -16,43 +16,39 @@
   height: 75vh;
 
   @media (max-width: 768px) {
-    height: 60vh;
+    height: 80vh;
   }
-}
-
-.teste {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  
 }
 
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  
 }
 
 th {
   background-color: #f2f2f2;
   text-align: left;
-  padding: 10px;
   border: 1px solid #dddddd;
+  padding: 4px;
 
   @media (max-width: 768px) {
-    font-size: 15px;
-    text-align: center;
+    font-size: 12px;
+    text-align: left;
   }
 }
 
 td {
   border: 1px solid #dddddd;
   text-align: left;
+  padding: 2px;
 
   @media (max-width: 768px) {
-    font-size: 15px;
-    text-align: center;
+    font-size: 11px;
+    text-align: left;
   }
+  
 }
 
 /*Nome, KG, Endereço*/

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import axios from "axios";
 import encrypted from "../../encrypted";
+import "../css/App.css"
 
 interface DeliveryMapProps {
   children?: React.ReactNode;
@@ -23,12 +24,12 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
   }, []);
 
   return (
-    <section className="w-full">
+    <section className="w-full" >
       <div id="map">
         <MapContainer
           center={[-14.235, -51.9253]}
           zoom={5}
-          scrollWheelZoom={true}
+          scrollWheelZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
