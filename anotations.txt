@@ -24,4 +24,5 @@ trocar os valores sensiveis por valores criptografados OK
 28/01
 Conectar com banco Atlas MongoDB
 trocar os métodos dos controladores pelos métodos do mongoose(ORM)
+trocar a api gey em google-address
  
