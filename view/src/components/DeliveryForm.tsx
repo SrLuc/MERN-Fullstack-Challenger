@@ -1,9 +1,9 @@
 import axios from "axios";
 import "../css/UIElements.css";
-import encrypted from "../../encrypted";
-interface DeliveryFormProps {}
+const API_GEOLOCATION_KEY = import.meta.env.VITE_GEOLOCATION_GOOGLE_API_KEY;
+const API_URL = import.meta.env.VITE_API_URL;
 
-const DeliveryForm = ({}: DeliveryFormProps) => {
+const DeliveryForm = () => {
   const handleDeliverySubmit = () => {
     const name = document.getElementById("name") as HTMLInputElement;
     const kg = document.getElementById("kg") as HTMLInputElement;
@@ -18,7 +18,7 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
     if (name.value === "" || kg.value === "" || address.value === "") {
       return alert("Preencha todos os campos");
     } else {
-      axios.post(encrypted.ALL_DELIVERIES, body);
+      axios.post(`${API_URL}/deliveries`, body);
       alert("Cadastro realizado com sucesso");
     }
   };
@@ -32,7 +32,7 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
 
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(
       addressValue
-    )}&key=${encrypted.REACT_GEOLOCATION_GOOGLE_API_KEY}`;
+    )}&key=${API_GEOLOCATION_KEY}`;
 
     axios
       .get(url)
@@ -46,7 +46,7 @@ const DeliveryForm = ({}: DeliveryFormProps) => {
   };
 
   const deleteAllDeliveries = () => {
-    axios.delete(encrypted.ALL_DELIVERIES);
+    axios.delete(`${API_URL}/deliveries`);
     alert("Todos os cadastros foram deletados");
     window.location.reload();
   };

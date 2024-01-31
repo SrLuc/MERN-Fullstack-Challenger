@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import axios from "axios";
-import encrypted from "../../encrypted";
-import "../css/App.css"
+const API_URL = import.meta.env.VITE_API_URL;
 
 interface DeliveryMapProps {
   children?: React.ReactNode;
@@ -13,7 +12,7 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
 
   useEffect(() => {
     axios
-      .get(encrypted.ALL_DELIVERIES)
+      .get(`${API_URL}/deliveries`)
       .then((response) => {
         setDeliveryMap(response.data);
         console.log(response.data);
@@ -24,12 +23,12 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
   }, []);
 
   return (
-    <section className="w-full" >
+    <section className="w-full">
       <div id="map">
         <MapContainer
           center={[-14.235, -51.9253]}
           zoom={5}
-          scrollWheelZoom={false}
+          scrollWheelZoom={true}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

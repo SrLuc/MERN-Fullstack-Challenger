@@ -51,6 +51,10 @@ td {
   
 }
 
+td:hover {
+  background-color: #f1f1f169;
+}
+
 /*Nome, KG, Endereço*/
 .userInputs {
   border-bottom: 1px solid #ddd;

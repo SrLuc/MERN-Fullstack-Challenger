@@ -4,6 +4,7 @@ import DeliveryTable from "./components/DeliveryTable";
 import "./css/App.css";
 
 function App() {
+
   return (
     <main className="xl:flex lg:flex md:flex justify-center main">
       <DeliveryForm />
