@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -27,8 +27,8 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
     <section className="w-full">
       <div id="map">
         <MapContainer
-          center={[-14.235, -51.9253]}
-          zoom={5}
+          center={[-5.022581064784649, -18.28778813528943]}
+          zoom={3}
           scrollWheelZoom={true}
         >
           <TileLayer
@@ -37,10 +37,19 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
           />
           {deliveryMap.map((delivery: any) => {
             return (
-              <Marker
-                key={delivery.id}
-                position={delivery.address.location}
-              ></Marker>
+              <Marker key={delivery._id} position={delivery.address.location}>
+                <Popup>
+                  <p>
+                    Entrega para : <strong>{delivery.name}</strong>
+                  </p>
+                  <p>
+                    Endereço: <strong>{delivery.address.publicPlace}</strong>
+                  </p>
+                  <p>
+                    País : <strong>{delivery.address.country}</strong>
+                  </p>
+                </Popup>
+              </Marker>
             );
           })}
         </MapContainer>
