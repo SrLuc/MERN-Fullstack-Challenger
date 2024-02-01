@@ -14,8 +14,9 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
     axios
       .get(`${API_URL}/deliveries`)
       .then((response) => {
-        setDeliveryMap(response.data);
-        console.log(response.data);
+        const deliveries = response.data.deliveries;
+        setDeliveryMap(deliveries);
+        console.log(deliveries);
       })
       .catch((error) => {
         console.log(error);

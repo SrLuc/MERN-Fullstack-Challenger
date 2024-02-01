@@ -22,7 +22,7 @@ trocar o tipo de ação do botãoo de deletar OK
 trocar os valores sensiveis por valores criptografados OK
 
 28/01
-Conectar com banco Atlas MongoDB
-trocar os métodos dos controladores pelos métodos do mongoose(ORM)
+Conectar com banco Atlas MongoDB OK
+trocar os métodos dos controladores pelos métodos do mongoose(ORM) OK
 trocar a api gey em google-address
  

@@ -11,8 +11,9 @@ const DeliveryTable = ({}: DeliveryTableProps) => {
     axios
       .get(`${API_URL}/deliveries`)
       .then((response) => {
-        setDeliveryDataTable(response.data);
-        console.log(response.data);
+        const deliveries = response.data.deliveries;
+        setDeliveryDataTable(deliveries);
+        console.log(deliveries);
       })
       .catch((error) => {
         console.log(error);
@@ -28,7 +29,7 @@ const DeliveryTable = ({}: DeliveryTableProps) => {
             <th>Rua</th>
             <th>Cidade</th>
             <th>País</th>
-            <th>Peso</th>
+            <th>Peso(kg)</th>
             <th>Lat</th>
             <th>Lng</th>
           </tr>
