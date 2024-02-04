@@ -2,7 +2,7 @@ const HttpError = require("../models/error-model");
 const getCoordinatesByAddress = require("../util/google-address");
 const deliveryModel = require("../database/schema/delivery-schema");
 const { validationResult } = require("express-validator");
-const DUMMY_DELIVERIES = require("../models/data-deliveries-model");
+//const DUMMY_DELIVERIES = require("../models/data-deliveries-model");
 
 const DeliveriesTest = (req, res, next) => {
   res.json("Hello Wolrd");
