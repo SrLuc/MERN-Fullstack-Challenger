@@ -29,7 +29,7 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
         <MapContainer
           center={[-5.022581064784649, -18.28778813528943]}
           zoom={3}
-          scrollWheelZoom={true}
+          scrollWheelZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -4,7 +4,6 @@ const API_GEOLOCATION_KEY = import.meta.env.VITE_GEOLOCATION_GOOGLE_API_KEY;
 const API_URL = import.meta.env.VITE_API_URL;
 
 const DeliveryForm = () => {
-  
   const handleDeliverySubmit = () => {
     const name = document.getElementById("name") as HTMLInputElement;
     const kg = document.getElementById("kg") as HTMLInputElement;
@@ -53,7 +52,7 @@ const DeliveryForm = () => {
   };
 
   return (
-    <section className="xl:w-1/4 lg:w-1/2 md:w-1/2 sm:w-full flex justify-center">
+    <section className="xl:w-1/4 lg:w-1/2 md:w-1/2 sm:w-full">
       <form
         action="POST"
         className="flex flex-col h-1/2 justify-evenly formContainer m-5"

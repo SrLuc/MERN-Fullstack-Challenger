@@ -4,11 +4,10 @@ import DeliveryTable from "./components/DeliveryTable";
 import "./css/App.css";
 
 function App() {
-
   return (
-    <main className="xl:flex lg:flex md:flex justify-center main">
+    <main className="xl:flex lg:flex md:flex justify-center main w-full">
       <DeliveryForm />
-      <section className="flex flex-col w-screen h-screen">
+      <section className="flex flex-col h-full w-screen">
         <DeliveryMap />
         <DeliveryTable />
       </section>
