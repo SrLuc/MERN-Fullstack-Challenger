@@ -52,10 +52,10 @@ const DeliveryForm = () => {
   };
 
   return (
-    <section className="xl:w-1/4 lg:w-1/2 md:w-1/2 sm:w-full">
+    <section className="">
       <form
         action="POST"
-        className="flex flex-col h-1/2 justify-evenly formContainer m-5"
+        className="flex flex-col"
         onSubmit={() => {
           handleDeliverySubmit();
         }}

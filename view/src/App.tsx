@@ -5,7 +5,7 @@ import "./css/App.css";
 
 function App() {
   return (
-    <main className="xl:flex lg:flex md:flex justify-center main w-full">
+    <main className="xl:flex lg:flex">
       <DeliveryForm />
       <section className="flex flex-col h-full w-screen">
         <DeliveryMap />

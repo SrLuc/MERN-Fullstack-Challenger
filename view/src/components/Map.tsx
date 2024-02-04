@@ -24,8 +24,8 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
   }, []);
 
   return (
-    <section className="w-full">
-      <div id="map">
+    <section>
+      <div id="map" className="mapContainer">
         <MapContainer
           center={[-5.022581064784649, -18.28778813528943]}
           zoom={3}
