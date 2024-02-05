@@ -53,6 +53,8 @@ td {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 2px;
+  word-wrap: break-word;        
+  overflow-wrap:break-word;
 
   @media (max-width: 768px) {
     font-size: 11px;
