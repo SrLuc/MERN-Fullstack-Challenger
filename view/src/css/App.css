@@ -20,21 +20,21 @@
     width: 47vh;
     height: 40vh;
   }
-  
 }
 
 .mapContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 30px;
+  margin: 5px;
 }
 
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  table-layout: fixed;
+
 }
 
 th {
@@ -57,6 +57,9 @@ td {
   @media (max-width: 768px) {
     font-size: 11px;
     text-align: left;
+    word-wrap: break-word;        
+    overflow-wrap:break-word;
+
   }
 }
 
