@@ -114,7 +114,7 @@ const DeliveryForm = () => {
             id="lng"
           />
         </div>
-        <div className="flex flex-col ">
+        <div className="flex flex-col p-2 ">
           <button className="styledButton" type="submit">
             Cadastrar Cliente
           </button>

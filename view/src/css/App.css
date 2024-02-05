@@ -127,10 +127,14 @@ td:hover {
   padding: 10px;
   outline: none;
   cursor: pointer;
+  margin: 3px;
+  border: 1px solid #ddd;
   transition: all 0.5s ease-in-out;
+
+
 }
 
 /*Botão de adicionar*/
 .styledButton:hover {
-  background-color: #f1f1f169;
+  background-color: #f1f1f1b4;
 }
