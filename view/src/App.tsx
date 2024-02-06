@@ -1,6 +1,6 @@
-import DeliveryForm from "./components/DeliveryForm";
+import DeliveryForm from "./components/DeliveryForm/DeliveryForm";
 import DeliveryMap from "./components/Map";
-import DeliveryTable from "./components/DeliveryTable";
+import DeliveryTable from "./components/DeliveryTable/DeliveryTable";
 import "./css/App.css";
 
 function App() {
