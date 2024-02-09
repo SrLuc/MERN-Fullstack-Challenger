@@ -1,17 +1,18 @@
 import { useState } from "react";
 
 const Test = () => {
-  const [peopleName, setPeopleName] = useState("Pedro");
+  const [state, setState] = useState("initial");
 
-  const changeName = (name: string) => {
-    return setPeopleName(name);
+  const handleClick = () => {
+    setState("clicked");
   };
 
   return (
-    <div>
-      <h1>Hello {peopleName}</h1>
-      <button onClick={() => changeName("Ruan")}>click here</button>
-    </div>
+    <>
+      <button style={{ backgroundColor: "red" }} onClick={handleClick}>
+        Click me {state}
+      </button>
+    </>
   );
 };
 
