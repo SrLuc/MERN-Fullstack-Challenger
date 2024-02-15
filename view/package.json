@@ -8,10 +8,12 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "jest": "jest"
+    "jest": "jest --watchAll --detectOpenHandles",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^1.6.5",
+    "axios-mock-adapter": "^1.22.0",
     "dotenv": "^16.4.1",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
@@ -19,6 +21,8 @@
     "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",

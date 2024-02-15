@@ -32,6 +32,7 @@ const getDeliveriesById = async (req, res, next) => {
 };
 
 const createDelivery = async (req, res, next) => {
+  
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return next(
@@ -56,7 +57,7 @@ const createDelivery = async (req, res, next) => {
 
   try {
     await createdDelivery.save();
-    res.status(201).json(createdDelivery);
+    return res.status(201).json(createdDelivery);
   } catch (error) {
     return next(
       new HttpError("Creating delivery failed, please try again.", 500)

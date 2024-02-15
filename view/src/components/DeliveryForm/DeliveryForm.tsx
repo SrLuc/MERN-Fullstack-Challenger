@@ -6,7 +6,7 @@ const API_GEOLOCATION_KEY = "AIzaSyB7Q6umkMcCwXwVb2wl5B4Htdy84fw89F0";
 const API_URL = "https://delivery-api-7rc8.onrender.com";
 
 const DeliveryForm = () => {
-  const handleDeliverySubmit = () => {
+  const handleDeliverySubmit = (e: any) => {
     const name = document.getElementById("name") as HTMLInputElement;
     const kg = document.getElementById("kg") as HTMLInputElement;
     const address = document.getElementById("address") as HTMLInputElement;
@@ -21,6 +21,7 @@ const DeliveryForm = () => {
       return alert("Preencha todos os campos");
     } else {
       axios.post(`${API_URL}/deliveries`, body);
+      e.preventDefault();
       alert("Cadastro realizado com sucesso");
     }
   };
@@ -59,7 +60,9 @@ const DeliveryForm = () => {
         action="POST"
         className="flex flex-col"
         onSubmit={() => {
-          handleDeliverySubmit();
+          handleDeliverySubmit((e: any) => {
+            return e;
+          });
         }}
       >
         <input

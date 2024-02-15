@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-const API_URL = import.meta.env.VITE_API_URL;
+//const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://delivery-api-7rc8.onrender.com";
 
 interface DeliveryTableProps {}
 
@@ -13,7 +14,6 @@ const DeliveryTable = ({}: DeliveryTableProps) => {
       .then((response) => {
         const deliveries = response.data.deliveries;
         setDeliveryDataTable(deliveries);
-        console.log(deliveries);
       })
       .catch((error) => {
         console.log(error);
