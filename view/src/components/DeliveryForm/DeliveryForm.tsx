@@ -5,7 +5,7 @@ const API_GEOLOCATION_KEY = import.meta.env.VITE_GEOLOCATION_GOOGLE_API_KEY;
 const API_URL = "https://delivery-api-7rc8.onrender.com";
 
 const DeliveryForm = () => {
-  const handleDeliverySubmit = (e: any) => {
+  const handleDeliverySubmit = () => {
     const name = document.getElementById("name") as HTMLInputElement;
     const kg = document.getElementById("kg") as HTMLInputElement;
     const address = document.getElementById("address") as HTMLInputElement;
@@ -20,8 +20,8 @@ const DeliveryForm = () => {
       return alert("Preencha todos os campos");
     } else {
       axios.post(`${API_URL}/deliveries`, body);
-      e.preventDefault();
       alert("Cadastro realizado com sucesso");
+      window.location.reload();
     }
   };
 
@@ -59,9 +59,7 @@ const DeliveryForm = () => {
         action="POST"
         className="flex flex-col"
         onSubmit={() => {
-          handleDeliverySubmit((e: any) => {
-            return e;
-          });
+          handleDeliverySubmit();
         }}
       >
         <input
