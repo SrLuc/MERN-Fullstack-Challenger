@@ -1,23 +1,18 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-interface Delivery {
-  id?: number;
-  kg?: number;
-}
-
-const InfoPanel = ({}: Delivery) => {
+const InfoPanel = () => {
   const API_URL = "https://delivery-api-7rc8.onrender.com/deliveries";
-  const [deliveries, setDeliveries] = useState<Delivery[]>([]);
+  const [deliveries, setDeliveries] = useState([]);
   const [totalWeight, setTotalWeight] = useState<number>(0);
 
   useEffect(() => {
     axios.get(API_URL).then((response) => {
-      const deliveriesData: Delivery[] = response.data.deliveries;
+      const deliveriesData = response.data.deliveries;
       setDeliveries(deliveriesData);
 
       const total = deliveriesData.reduce(
-        (acc, delivery) => acc + Number(delivery.kg),
+        (acc: number, delivery: any) => acc + parseInt(delivery.kg),
         0
       );
       setTotalWeight(total);
