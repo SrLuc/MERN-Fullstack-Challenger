@@ -2,8 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 interface Delivery {
-  id: number;
-  kg: number;
+  id?: number;
+  kg?: number;
 }
 
 const InfoPanel = ({}: Delivery) => {
