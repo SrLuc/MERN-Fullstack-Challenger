@@ -1,8 +1,7 @@
 import axios from "axios";
 import "../../css/UIElements.css";
-//const API_GEOLOCATION_KEY = import.meta.env.VITE_GEOLOCATION_GOOGLE_API_KEY;
+const API_GEOLOCATION_KEY = import.meta.env.VITE_GEOLOCATION_GOOGLE_API_KEY;
 //const API_URL = import.meta.env.VITE_API_URL;
-const API_GEOLOCATION_KEY = "AIzaSyB7Q6umkMcCwXwVb2wl5B4Htdy84fw89F0";
 const API_URL = "https://delivery-api-7rc8.onrender.com";
 
 const DeliveryForm = () => {

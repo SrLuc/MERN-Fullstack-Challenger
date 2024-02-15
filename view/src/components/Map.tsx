@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import axios from "axios";
-//const API_URL = import.meta.env.VITE_API_URL;
-const API_URL = "https://delivery-api-7rc8.onrender.com";
+const API_URL = import.meta.env.VITE_API_URL;
 
 interface DeliveryMapProps {
   children?: React.ReactNode;
@@ -17,6 +16,7 @@ const DeliveryMap = ({}: DeliveryMapProps) => {
       .then((response) => {
         const deliveries = response.data.deliveries;
         setDeliveryMap(deliveries);
+        console.log(deliveries);
       })
       .catch((error) => {
         console.log(error);
