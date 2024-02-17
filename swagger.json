@@ -1,0 +1,148 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Delivery API",
+    "version": "1.0.0",
+    "description": "This is a simple delivery to find coordinates of a location and set in a map an delivery that contains the location and the name of the person who will receive the delivery.",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "name": "Delivery API Support",
+      "url": "http://www.swagger.io/support",
+      "email": "ruanlucenaramos@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7936",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/deliveries": {
+      "get": {
+        "sumary": "Get All Deliveries",
+        "description": "Router to get All Deleveries that are able in API",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Delivery"
+              },
+              "example": {
+                "Delivery": {
+                  "publicPlace": "Rua dos Bobos, nº 0",
+                  "city": "Recife",
+                  "state": "Pernambuco",
+                  "country": "Brazil",
+                  "location": [-46.633309, -23.55052],
+                  "_id": "b8b54a8c-5974-4db9-aca0",
+                  "name": "Bob",
+                  "kg": "12.4"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Delivery"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "sumary": "Create a Delivery",
+        "description": "Router to create a new delivery",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "publicPlace": {
+                    "type": "string"
+                  },
+                  "kg": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "Delivery": {
+                    "name": "Alceu",
+                    "publicPlace": "Rua da Aurora",
+                    "kg": "12.4"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Delivery"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Delivery": {
+        "type": "object",
+        "properties": {
+          "publicPlace": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "location": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kg": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
