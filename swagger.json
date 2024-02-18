@@ -78,16 +78,17 @@
                   "type": "object",
                   "example": {
                     "delivery": {
-                      "name": "Maria",
-                      "kg": "3",
                       "address": {
-                        "publicPlace": "La Paz",
-                        "city": "Santander",
+                        "publicPlace": "Juana Genoveva Fadul",
+                        "city": "Ushuaia",
                         "state": "",
-                        "country": "Colombia",
-                        "location": [6.1789356, -73.5900317]
+                        "country": "Argentina",
+                        "location": [-54.8083103, -68.3068632]
                       },
-                      "_id": "65d1712de3fde17d7d53"
+                      "_id": "5f9e3e3e3e3e3e3e3e3e3e3e",
+                      "name": "Carlito",
+                      "kg": "5.63",
+                      "__v": 0
                     }
                   }
                 }
