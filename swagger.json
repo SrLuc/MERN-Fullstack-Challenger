@@ -61,9 +61,9 @@
                   }
                 },
                 "example": {
-                  "name": "Maria",
-                  "kg": 3,
-                  "address": "La Paz, Colombia"
+                  "name": "Carlito",
+                  "kg": "5.63",
+                  "address": "Juana Genoveva Fadul"
                 }
               }
             }
