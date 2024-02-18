@@ -22,35 +22,16 @@
       "get": {
         "sumary": "Get All Deliveries",
         "description": "Router to get All Deleveries that are able in API",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Delivery"
-              },
-              "example": {
-                "Delivery": {
-                  "publicPlace": "Rua dos Bobos, nº 0",
-                  "city": "Recife",
-                  "state": "Pernambuco",
-                  "country": "Brazil",
-                  "location": [-46.633309, -23.55052],
-                  "_id": "b8b54a8c-5974-4db9-aca0",
-                  "name": "Bob",
-                  "kg": "12.4"
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/Delivery"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Delivery"
+                  }
                 }
               }
             }
@@ -72,19 +53,17 @@
                   "name": {
                     "type": "string"
                   },
-                  "publicPlace": {
+                  "kg": {
                     "type": "string"
                   },
-                  "kg": {
+                  "publicPlace": {
                     "type": "string"
                   }
                 },
                 "example": {
-                  "Delivery": {
-                    "name": "Alceu",
-                    "publicPlace": "Rua da Aurora",
-                    "kg": "12.4"
-                  }
+                  "name": "Maria",
+                  "kg": 3,
+                  "address": "La Paz, Colombia"
                 }
               }
             }
@@ -97,13 +76,38 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Delivery"
+                  "example": {
+                    "delivery": {
+                      "name": "Maria",
+                      "kg": "3",
+                      "address": {
+                        "publicPlace": "La Paz",
+                        "city": "Santander",
+                        "state": "",
+                        "country": "Colombia",
+                        "location": [6.1789356, -73.5900317]
+                      },
+                      "_id": "65d1712de3fde17d7d53"
+                    }
+                  }
                 }
               }
             }
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "sumary": "delete all deliveries",
+        "description": "Router to delete all deliveries",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -114,22 +118,27 @@
       "Delivery": {
         "type": "object",
         "properties": {
-          "publicPlace": {
-            "type": "string"
-          },
-          "city": {
-            "type": "string"
-          },
-          "state": {
-            "type": "string"
-          },
-          "country": {
-            "type": "string"
-          },
-          "location": {
-            "type": "array",
-            "items": {
-              "type": "number"
+          "address": {
+            "type": "object",
+            "properties": {
+              "publicPlace": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "location": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
             }
           },
           "_id": {
@@ -140,6 +149,9 @@
           },
           "kg": {
             "type": "string"
+          },
+          "__v": {
+            "type": "number"
           }
         }
       }

@@ -2,6 +2,7 @@ const HttpError = require("../models/error-model");
 const getCoordinatesByAddress = require("../util/google-address");
 const deliveryModel = require("../database/schema/delivery-schema");
 const { validationResult } = require("express-validator");
+const { ObjectId } = require("mongodb");
 //const DUMMY_DELIVERIES = require("../models/data-deliveries-model");
 
 const DeliveriesTest = (req, res, next) => {
@@ -17,22 +18,7 @@ const getDeliveries = async (req, res, next) => {
   }
 };
 
-const getDeliveriesById = async (req, res, next) => {
-  try {
-    const delivery = await deliveryModel.findById(req.params.id);
-
-    if (!delivery) {
-      return next(new HttpError("Delivery not found.", 404));
-    }
-
-    res.status(200).json({ delivery });
-  } catch (error) {
-    return next(new HttpError("Failed to fetch delivery.", 500));
-  }
-};
-
 const createDelivery = async (req, res, next) => {
-  
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return next(
@@ -54,6 +40,18 @@ const createDelivery = async (req, res, next) => {
     kg,
     address: coordinates,
   });
+
+  const deliveryExists = await deliveryModel.findOne({
+    name: name,
+    kg: kg,
+    address: coordinates,
+  });
+
+  if (deliveryExists) {
+    return next(
+      new HttpError("Delivery already exists, please check your data.", 422)
+    );
+  }
 
   try {
     await createdDelivery.save();
@@ -77,7 +75,6 @@ const deleteAllDeliveries = async (req, res, next) => {
 module.exports = {
   DeliveriesTest,
   getDeliveries,
-  getDeliveriesById,
   createDelivery,
   deleteAllDeliveries,
 };
