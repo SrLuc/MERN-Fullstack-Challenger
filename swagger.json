@@ -13,7 +13,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:7936",
+      "url": "https://delivery-api-7rc8.onrender.com",
       "description": "Local server"
     }
   ],
