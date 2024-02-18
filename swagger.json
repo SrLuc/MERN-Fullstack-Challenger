@@ -94,8 +94,8 @@
               }
             }
           },
-          "500": {
-            "description": "Internal Server Error"
+          "409": {
+            "description": "Conflict: User already exists"
           }
         }
       },
