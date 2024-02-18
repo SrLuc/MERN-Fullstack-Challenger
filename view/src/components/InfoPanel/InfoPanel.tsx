@@ -22,10 +22,10 @@ const InfoPanel = () => {
   return (
     <section className="flex h-full justify-start p-2 border bg-stone-100">
       <p className="">
-        Clientes Cadastrados: <strong>{deliveries.length}</strong>{" "}
+        Clientes Cadastrados: <strong>{deliveries.length}</strong>
       </p>
       <p className="ml-5">
-        Peso Total(kg):<strong>{totalWeight}</strong>
+        Peso Total/kg: <strong>{totalWeight}</strong>
       </p>
     </section>
   );
