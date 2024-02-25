@@ -1,7 +1,7 @@
 import axios from "axios";
 import "../../css/UIElements.css";
 //const API_GEOLOCATION_KEY = import.meta.env.VITE_GEOLOCATION_GOOGLE_API_KEY;
-const API_GEOLOCATION_KEY="5B4Htdy84fw89F0"
+const API_GEOLOCATION_KEY = "5B4Htdy84fw89F0";
 //const API_URL = import.meta.env.VITE_API_URL;
 const API_URL = "https://delivery-api-7rc8.onrender.com";
 
@@ -10,13 +10,19 @@ const DeliveryForm = () => {
     const name = document.getElementById("name") as HTMLInputElement;
     const kg = document.getElementById("kg") as HTMLInputElement;
     const address = document.getElementById("address") as HTMLInputElement;
+
     const body = {
       name: name.value,
       kg: kg.value,
       address: address.value,
     };
 
-    if (name.value === "" || kg.value === "" || address.value === "") {
+    if (
+      name.value === "" ||
+      kg.value === "" ||
+      kg.value != typeof kg.value ||
+      address.value === ""
+    ) {
       return alert("Preencha todos os campos");
     } else {
       axios.post(`${API_URL}/deliveries`, body);

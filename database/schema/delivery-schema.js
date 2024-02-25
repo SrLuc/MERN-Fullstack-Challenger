@@ -2,7 +2,7 @@ const mongosse = require("mongoose");
 
 const deliverySchema = new mongosse.Schema({
   name: { type: String, required: true },
-  kg: { type: Number, required: true },
+  kg: { type: String, required: true },
   address: {
     publicPlace: { type: String, required: true },
     city: { type: String, required: false },
