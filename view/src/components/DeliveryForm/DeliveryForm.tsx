@@ -1,33 +1,35 @@
 import axios from "axios";
 import "../../css/UIElements.css";
-//const API_GEOLOCATION_KEY = import.meta.env.VITE_GEOLOCATION_GOOGLE_API_KEY;
-const API_GEOLOCATION_KEY = "5B4Htdy84fw89F0";
-//const API_URL = import.meta.env.VITE_API_URL;
-const API_URL = "https://delivery-api-7rc8.onrender.com";
+const API_GEOLOCATION_KEY = import.meta.env.VITE_GEOLOCATION_GOOGLE_API_KEY;
+//const API_GEOLOCATION_KEY = "AIzaSyB7Q6umkMcCwXwVb2wl5MODIFY4fw89F0";
+const API_URL = import.meta.env.VITE_API_URL;
+//const API_URL = "https://delivery-api-7rc8.onrender.com";
 
 const DeliveryForm = () => {
   const handleDeliverySubmit = () => {
     const name = document.getElementById("name") as HTMLInputElement;
     const kg = document.getElementById("kg") as HTMLInputElement;
     const address = document.getElementById("address") as HTMLInputElement;
-
     const body = {
       name: name.value,
       kg: kg.value,
       address: address.value,
     };
 
-    if (
-      name.value === "" ||
-      kg.value === "" ||
-      kg.value != typeof kg.value ||
-      address.value === ""
-    ) {
-      return alert("Preencha todos os campos");
-    } else {
-      axios.post(`${API_URL}/deliveries`, body);
-      alert("Cadastro realizado com sucesso");
-      window.location.reload();
+    const kgValue = parseFloat(kg.value);
+    if (isNaN(kgValue)) {
+      alert("O campo kg deve ser um número válido");
+      return;
+    }
+
+    switch ((name.value, kg.value, address.value)) {
+      case "":
+        alert("Preencha o campo nome");
+        break;
+      default:
+        axios.post(`${API_URL}/deliveries`, body);
+        alert("Cadastro realizado com sucesso");
+        window.location.reload();
     }
   };
 
@@ -76,7 +78,7 @@ const DeliveryForm = () => {
           id="name"
         />
         <input
-          type="text"
+          type="number"
           name="Kg"
           placeholder="Peso da Entrega"
           className="text-center userInputs"
